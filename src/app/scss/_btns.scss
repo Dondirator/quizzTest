@@ -17,12 +17,13 @@
 .imlucky-btn {
   color: #568b26;
   border-radius: 25px;
-  padding: 4px 0;
+  padding: 10px 0;
   font-size: 24px;
   line-height: 24px;
   background-color: #dbe2a4;
   width: 50%;
   margin: 0 auto;
+
   &:hover {
     background-color: #cee580;
   }
@@ -38,8 +39,9 @@
   color: #568b26;
   width: 100%;
   border-radius: 25px;
-  padding: 4px 0px;
-  margin: 0 auto;
+  padding: 10px 0px;
+  margin-top: -45px;
+  font-weight: 500;
 
   &:hover {
     background-color: #cee580;
@@ -56,8 +58,12 @@
   border: 1px solid black;
   font-size: 24px;
   line-height: 24px;
-  padding: 4px 20px;
+  padding: 10px 20px;
   color: black;
+  @media (max-width: 500px) {
+    font-size: 18px;
+    padding: 4px 0px;
+  }
   &:disabled {
     color: grey;
     opacity: 0.5;
