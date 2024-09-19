@@ -8,7 +8,9 @@
     <div class="home__games-body">
       <div *ngFor="let category of categories" class="item">
         <h3 class="heading-tertiary">{{ category.name }}</h3>
-        <p>Количество вопросов: {{ questionsCount }}</p>
+        <p class="heading-tertiary">
+          Количество вопросов: {{ questionsCount }}
+        </p>
         <button class="play-btn" (click)="play(category.id, category.name)">
           Играть
         </button>
