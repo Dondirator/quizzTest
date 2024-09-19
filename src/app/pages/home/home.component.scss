@@ -16,6 +16,11 @@
     padding-top: 30px;
     row-gap: 40px;
     column-gap: 20px;
+    p {
+      @media (max-width: 550px) {
+        margin-top: -27px;
+      }
+    }
   }
 }
 .item {
@@ -28,7 +33,7 @@
     width: 38%;
     margin: 0 20px;
   }
-  @media (max-width: 420px) {
+  @media (max-width: 550px) {
     width: 100%;
     text-align: center;
     margin: 0 20px;
