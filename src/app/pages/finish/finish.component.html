@@ -1,30 +1,38 @@
 <div class="container">
   <div class="finish">
-    <div>
-      <h2>Игра завершена!</h2>
-      <p>Вы набрали {{ score }} из {{ totalQuestions }} баллов.</p>
-      <p>Время, затраченное на игру: {{ timeTaken }} секунд.</p>
-      <p>Среднее время на вопрос: {{ additionalStat1 }} секунд.</p>
-      <p>Процент правильных ответов: {{ additionalStat2 }}%</p>
-
-      <button (click)="resetGame()">На главную</button>
-    </div>
-    <div>
-      <h3>Результаты по вопросам:</h3>
-      <ul *ngIf="userAnswers.length > 0; else noAnswers">
-        <li *ngFor="let answer of userAnswers">
-          <p><strong>Вопрос:</strong> {{ answer.question }}</p>
-          <p><strong>Ваш ответ:</strong> {{ answer.selectedAnswer }}</p>
-          <p><strong>Правильный ответ:</strong> {{ answer.correctAnswer }}</p>
-          <p *ngIf="answer.isCorrect" style="color: green">Ответ правильный!</p>
-          <p *ngIf="!answer.isCorrect" style="color: red">
-            Ответ неправильный!
-          </p>
-        </li>
-      </ul>
-      <ng-template #noAnswers>
-        <p>Ответы не найдены.</p>
-      </ng-template>
+    <div class="finish__body">
+      <p class="secondary-heading">
+        Your score is {{ score }} out of {{ totalQuestions }}.
+      </p>
+      <div class="finish__stat">
+        <p class="secondary-heading">Time spent playing: {{ timeTaken }} s.</p>
+        <p class="secondary-heading">
+          Average time per question: {{ additionalStat1 }} s.
+        </p>
+      </div>
+      <div class="game-btn-body">
+        <button class="game-btn" (click)="showAnswers()">Show answers</button>
+      </div>
+      <div class="game-btn-body">
+        <button class="game-btn" (click)="resetGame()">More quizz</button>
+      </div>
     </div>
   </div>
+  <h3 *ngIf="showAnswer">Answers to questions:</h3>
+  <div class="answer answer__body" *ngIf="showAnswer">
+    <div class="answer__item" *ngFor="let answer of userAnswers">
+      <ul>
+        <li>
+          <p><strong>Question:</strong> {{ answer.question }}</p>
+          <p><strong>Answer:</strong> {{ answer.selectedAnswer }}</p>
+          <p><strong>Correct answer:</strong> {{ answer.correctAnswer }}</p>
+          <p *ngIf="answer.isCorrect" style="color: green">Incorrect answer!</p>
+          <p *ngIf="!answer.isCorrect" style="color: red">Incorrect answer!</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ng-template #noAnswers>
+    <p>...</p>
+  </ng-template>
 </div>

@@ -13,6 +13,7 @@ export class FinishComponent implements OnInit {
   additionalStat1: number = 0; // Среднее время на вопрос
   additionalStat2: number = 0; // Процент правильных ответов
   userAnswers: any[] = []; // Для хранения ответов пользователя
+  showAnswer = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -46,5 +47,8 @@ export class FinishComponent implements OnInit {
     // Очищаем данные из localStorage после окончания игры
     localStorage.removeItem('userAnswers');
     this.router.navigate(['/']); // Навигация на главную страницу
+  }
+  showAnswers() {
+    return (this.showAnswer = !this.showAnswer);
   }
 }
