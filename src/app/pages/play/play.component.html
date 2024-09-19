@@ -2,6 +2,7 @@
   <h1 class="heading-primary" style="text-align: center; padding: 20px 0">
     {{ categoryName }}
   </h1>
+  <app-loader *ngIf="isLoading"></app-loader>
   <div class="play">
     <form [formGroup]="quizForm" (ngSubmit)="nextQuestion()">
       <div class="play__body" *ngIf="questions.length">

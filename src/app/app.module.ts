@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { PlayComponent } from './pages/play/play.component';
 import { FinishComponent } from './pages/finish/finish.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MiniGameComponent } from './components/mini-game/mini-game.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,8 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     PlayComponent,
     FinishComponent,
-    MiniGameComponent,
     HeaderComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

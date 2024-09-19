@@ -5,6 +5,9 @@
       <button class="imlucky-btn" (click)="playRandomQuiz()">I'm lucky</button>
     </div>
     <h1 class="primary-heading">Other games by topics</h1>
+
+    <app-loader *ngIf="isLoading"></app-loader>
+
     <div class="home__games-body">
       <div *ngFor="let category of categories" class="item">
         <h3 class="heading-tertiary">{{ category.name }}</h3>

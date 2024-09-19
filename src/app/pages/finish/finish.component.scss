@@ -1,4 +1,5 @@
 .container {
+  padding-bottom: 60px;
 }
 .finish {
   margin: 0 auto;
@@ -49,14 +50,18 @@ h3 {
   }
 
   &__item {
-    width: 48%;
+    width: 49%;
     padding: 15px 30px;
     background-color: black;
     border-radius: 15px;
     background-color: #dbe2a4;
+    @media (max-width: 850px) {
+      width: 100%;
+    }
     ul {
       li {
         p {
+          font-size: 20px;
           padding-bottom: 5px;
           &:last-child {
             padding-bottom: 0px;

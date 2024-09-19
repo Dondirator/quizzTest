@@ -26,13 +26,10 @@
           <p><strong>Question:</strong> {{ answer.question }}</p>
           <p><strong>Answer:</strong> {{ answer.selectedAnswer }}</p>
           <p><strong>Correct answer:</strong> {{ answer.correctAnswer }}</p>
-          <p *ngIf="answer.isCorrect" style="color: green">Incorrect answer!</p>
+          <p *ngIf="answer.isCorrect" style="color: green">Correct answer!</p>
           <p *ngIf="!answer.isCorrect" style="color: red">Incorrect answer!</p>
         </li>
       </ul>
     </div>
   </div>
-  <ng-template #noAnswers>
-    <p>...</p>
-  </ng-template>
 </div>

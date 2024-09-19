@@ -7,7 +7,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 })
 export class QuizService {
   private apiUrl = 'https://opentdb.com/api.php';
-  private cache = new Map<number, any>(); // Кэш для хранения запросов
+  private cache = new Map<number, any>();
 
   constructor(private http: HttpClient) {}
 
@@ -16,17 +16,15 @@ export class QuizService {
   }
 
   getQuestions(categoryId: number): Observable<any> {
-    // Проверка кэша
     if (this.cache.has(categoryId)) {
       return of(this.cache.get(categoryId));
     }
 
-    // Если в кэше нет данных, выполняем запрос
     return this.http
       .get(`${this.apiUrl}?amount=10&category=${categoryId}`)
       .pipe(
         map((response) => {
-          this.cache.set(categoryId, response); // Сохраняем результат в кэш
+          this.cache.set(categoryId, response);
           return response;
         })
       );
