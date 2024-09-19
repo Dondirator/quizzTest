@@ -1,0 +1,18 @@
+<section class="home">
+  <div class="container">
+    <div class="home__heading">
+      <h1 class="primary-heading">try to play random Quizz</h1>
+      <button class="imlucky-btn" (click)="playRandomQuiz()">I'm lucky</button>
+    </div>
+    <h1 class="primary-heading">Other games by topics</h1>
+    <div class="home__games-body">
+      <div *ngFor="let category of categories" class="item">
+        <h3 class="heading-tertiary">{{ category.name }}</h3>
+        <p>Количество вопросов: {{ questionsCount }}</p>
+        <button class="play-btn" (click)="play(category.id, category.name)">
+          Играть
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

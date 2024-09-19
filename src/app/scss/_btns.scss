@@ -1,0 +1,69 @@
+.home-btn {
+  background-color: #ffffff;
+  border-radius: 25px;
+  color: black;
+  line-height: 24px;
+  padding: 4px 45px;
+  font-size: 24px;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+  &:active {
+    background-color: #e0e0e0;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px);
+  }
+}
+.imlucky-btn {
+  color: #568b26;
+  border-radius: 25px;
+  padding: 4px 0;
+  font-size: 24px;
+  line-height: 24px;
+  background-color: #dbe2a4;
+  width: 50%;
+  margin: 0 auto;
+  &:hover {
+    background-color: #cee580;
+  }
+  &:active {
+    background-color: #cee580;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px);
+  }
+}
+
+.play-btn {
+  background: #def8cf;
+  color: #568b26;
+  width: 100%;
+  border-radius: 25px;
+  padding: 4px 0px;
+  margin: 0 auto;
+
+  &:hover {
+    background-color: #cee580;
+  }
+  &:active {
+    background-color: #cee580;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px);
+  }
+}
+.game-btn {
+  background-color: #def8cf;
+  border-radius: 25px;
+  border: 1px solid black;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 4px 20px;
+
+  &:hover {
+    background-color: #cee580;
+  }
+  &:active {
+    background-color: #cee580;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px);
+  }
+}

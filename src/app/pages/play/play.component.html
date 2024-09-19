@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="heading-primary" style="text-align: center; padding: 20px 0">
+    {{ categoryName }}
+  </h1>
+  <div class="play">
+    <form [formGroup]="quizForm" (ngSubmit)="nextQuestion()">
+      <div class="play__body" *ngIf="questions.length">
+        <div *ngIf="currentQuestionIndex < questions.length">
+          <h2 style="padding-bottom: 10px" class="secondary-heading">
+            {{ currentQuestionIndex + 1 }}.Question
+          </h2>
+          <p
+            style="padding-bottom: 10px"
+            class="secondary-heading"
+            [innerHTML]="questions[currentQuestionIndex].question"
+          ></p>
+          <div
+            class="secondary-heading"
+            *ngFor="
+              let answer of questions[
+                currentQuestionIndex
+              ].incorrect_answers.concat(
+                questions[currentQuestionIndex].correct_answer
+              )
+            "
+          >
+            <label>
+              <input type="radio" [value]="answer" formControlName="answer" />
+              {{ answer }}
+            </label>
+          </div>
+          <div class="play__btns">
+            <button
+              class="game-btn"
+              type="submit"
+              [disabled]="!quizForm.get('answer')?.value"
+            >
+              Следующий вопрос
+            </button>
+            <button class="game-btn" (click)="resetGame()">
+              Назад на главную
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

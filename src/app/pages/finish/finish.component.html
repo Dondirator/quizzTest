@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="finish">
+    <div>
+      <h2>Игра завершена!</h2>
+      <p>Вы набрали {{ score }} из {{ totalQuestions }} баллов.</p>
+      <p>Время, затраченное на игру: {{ timeTaken }} секунд.</p>
+      <p>Среднее время на вопрос: {{ additionalStat1 }} секунд.</p>
+      <p>Процент правильных ответов: {{ additionalStat2 }}%</p>
+
+      <button (click)="resetGame()">На главную</button>
+    </div>
+    <div>
+      <h3>Результаты по вопросам:</h3>
+      <ul *ngIf="userAnswers.length > 0; else noAnswers">
+        <li *ngFor="let answer of userAnswers">
+          <p><strong>Вопрос:</strong> {{ answer.question }}</p>
+          <p><strong>Ваш ответ:</strong> {{ answer.selectedAnswer }}</p>
+          <p><strong>Правильный ответ:</strong> {{ answer.correctAnswer }}</p>
+          <p *ngIf="answer.isCorrect" style="color: green">Ответ правильный!</p>
+          <p *ngIf="!answer.isCorrect" style="color: red">
+            Ответ неправильный!
+          </p>
+        </li>
+      </ul>
+      <ng-template #noAnswers>
+        <p>Ответы не найдены.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
